@@ -1,10 +1,17 @@
+:root {
+  /* SITE CONFIGURATION */
+  --endo-theme--primary: #2a2aff;
+  --endo-theme--background: #FFFFFF;
+  --endo-theme--bg-solid: #FFFFFF;
+}
+
 @keyframes endo-radio--check {
-  from {padding: 6px; background-color: #FFFFFF}
-  to {padding: 2px; background-color: #2a2aff}
+  from {padding: 6px; background-color: var(--endo-theme--bg-solid, #ffffff)}
+  to {padding: 2px; background-color: var(--endo-theme--primary, #2a2aff)}
 }
 @keyframes endo-radio--uncheck {
-  from {padding: 2px; background-color: #2a2aff}
-  to {padding: 6px; background-color: #FFFFFF}
+  from {padding: 2px; background-color: var(--endo-theme--primary, #2a2aff)}
+  to {padding: 6px; background-color: var(--endo-theme--bg-solid, #ffffff)}
 }
 @keyframes endo-switch--check {
   from {padding-left: 2px; padding-right: 16px}
@@ -24,7 +31,7 @@
 }
 
 input[type=radio] {
-  border: #2a2aff 2px solid;
+  border: var(--endo-theme--primary, #2a2aff) 2px solid;
   border-radius: 50%;
   width: 16px;
   height: 16px;
@@ -32,13 +39,13 @@ input[type=radio] {
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none;
-  background: #2a2aff content-box content-box;
+  background: var(--endo-theme--primary, #2a2aff) content-box content-box;
   padding: 6px;
   animation: endo-radio--uncheck ease-in-out 0.25s;
 }
 
 input[type=radio]:checked {
-  background: #2a2aff content-box content-box;
+  background: var(--endo-theme--primary, #2a2aff) content-box content-box;
   padding: 2px;
   animation: endo-radio--check ease-in-out 0.25s;
 }
@@ -46,7 +53,7 @@ input[type=radio]:checked {
 *:active {outline:none}
 
 input[type=checkbox] {
-  border: #2a2aff 2px solid;
+  border: var(--endo-theme--primary, #2a2aff) 2px solid;
   border-radius: 0%;
   width: 16px;
   height: 16px;
@@ -68,7 +75,7 @@ input[type=checkbox]:checked {
   animation: endo-checkbox--check ease-in-out 0.25s;
 }
 input[type=checkbox].switchbox {
-  border: #2a2aff 2px solid;
+  border: var(--endo-theme--primary, #2a2aff) 2px solid;
   border-radius: 0%;
   width: 32px;
   height: 16px;
@@ -85,8 +92,8 @@ input[type=checkbox].switchbox {
   animation: endo-switch--uncheck ease-in-out 0.25s;
 }
 input[type=checkbox].switchbox:checked {
-  border: #2a2aff 2px solid;
-  background-color: #2a2aff;
+  border: var(--endo-theme--primary, #2a2aff) 2px solid;
+  background-color: var(--endo-theme--primary, #2a2aff);
   background-size: 50%;
   background-origin: content-box;
   background-clip: content-box;
@@ -98,7 +105,7 @@ input[type=checkbox].switchbox:checked {
 select, input, button {
   background: transparent;
   border: none;
-  border-bottom: #2a2aff 2px solid;
+  border-bottom: var(--endo-theme--primary, #2a2aff) 2px solid;
   border-radius: 4px;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -118,20 +125,20 @@ input[type=color] {
 }
 input[type=range] {
   border-bottom: none;
-  border-left: #2a2aff 2px solid;
-  border-right: #2a2aff 2px solid;
-  border-bottom: #2a2aff 1px solid;
+  border-left: var(--endo-theme--primary, #2a2aff) 2px solid;
+  border-right: var(--endo-theme--primary, #2a2aff) 2px solid;
+  border-bottom: var(--endo-theme--primary, #2a2aff) 1px solid;
 }
 input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
-  background: #2a2aff;
+  background: var(--endo-theme--primary, #2a2aff);
   border-radius: 50%;
   border: 0;
 }
 textarea {
   background: transparent;
   border: none;
-  border-bottom: #2a2aff 2px solid;
-  border-left: #2a2aff 2px solid;
+  border-bottom: var(--endo-theme--primary, #2a2aff) 2px solid;
+  border-left: var(--endo-theme--primary, #2a2aff) 2px solid;
   border-radius: 4px;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -141,25 +148,25 @@ textarea {
 /* todo: media players */
 
 a {
-  color: #2a2aff;
+  color: var(--endo-theme--primary, #2a2aff);
   text-decoration: none;
-  border-bottom: #2a2aff 2px solid;
+  border-bottom: var(--endo-theme--primary, #2a2aff) 2px solid;
   border-radius: 2px;
 }
 
 fieldset {
-  border: #2a2aff 2px solid;
-  border-top: #2a2aff 1px solid;
+  border: var(--endo-theme--primary, #2a2aff) 2px solid;
+  border-top: var(--endo-theme--primary, #2a2aff) 1px solid;
   border-radius: 4px;
 }
 legend {
   border: none;
-  border-bottom: #2a2aff 2px solid;
+  border-bottom: var(--endo-theme--primary, #2a2aff) 2px solid;
   border-radius: 4px;
 }
 
 div[class*="bs-segm-"] {
-  border: #2a2aff 2px solid;
+  border: var(--endo-theme--primary, #2a2aff) 2px solid;
   border-bottom: none;
   border-top: none;
   padding-left: 8px;
@@ -172,4 +179,5 @@ html {
 }
 body[layout="text"] {
   max-width: 768px;
+  background: var(--endo-theme--background, #FFFFFF);
 }
