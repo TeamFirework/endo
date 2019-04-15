@@ -2,8 +2,9 @@
   /* SITE CONFIGURATION */
   --endo-theme--primary: #2a2aff;
   --endo-theme--on-primary: #FFFFFF;
-  --endo-theme--background: #FFFFFF;
-  --endo-theme--bg-solid: #FFFFFF;
+  --endo-theme--background: #000000;
+  --endo-theme--on-background: #FFFFFF;
+  --endo-theme--bg-solid: #000000;
 }
 
 @keyframes endo-radio--check {
@@ -185,19 +186,45 @@ legend {
   border-radius: 4px;
 }
 
-div[class*="bs-segm-"] {
+card, .endo-card {
   border: var(--endo-theme--primary, #2a2aff) 2px solid;
   border-bottom: none;
   border-top: none;
   padding-left: 8px;
   border-radius: 4px;
+  display: block;
+  box-shadow: 0 0 6px black;
+  padding: 4px 8px;
+  margin: 24px 0;
+}
+.endo-card--tight {
+  padding: 0px 2px;
+}
+.endo-card--shadow__light {
+  box-shadow: 0 0 6px white;
+}
+
+.endo-card--container__thin, .endo-card--container__small {
+  max-width: 512px;
+  padding: 0 calc(50vw - 256px);
+}
+.endo-card--container__medium {
+  max-width: 768px;
+  padding: 0 calc(50vw - 384px);
+}
+.endo-card--container__large, .endo-card--container__big {
+  max-width: 1024px;
+  padding: 0 calc(50vw - 512px);
 }
 
 html {
   height: 100%;
   width: 100%;
 }
-body[layout="text"] {
-  max-width: 768px;
+body[layout="text"] article {
+  max-width: 640px;
+}
+body {
   background: var(--endo-theme--background, #FFFFFF);
+  color: var(--endo-theme--on-background, #000000);
 }
