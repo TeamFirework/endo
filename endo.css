@@ -1,6 +1,7 @@
 :root {
   /* SITE CONFIGURATION */
   --endo-theme--primary: #2a2aff;
+  --endo-theme--on-primary: #FFFFFF;
   --endo-theme--background: #FFFFFF;
   --endo-theme--bg-solid: #FFFFFF;
 }
@@ -48,6 +49,25 @@ input[type=radio]:checked {
   background: var(--endo-theme--primary, #2a2aff) content-box content-box;
   padding: 2px;
   animation: endo-radio--check ease-in-out 0.25s;
+}
+
+.endo-radio--group input[type=radio] {
+  display: none;
+}
+.endo-radio--group {
+  display: inline-block;
+  border: var(--endo-theme--primary, #2a2aff) 2px solid;
+  border-radius: 1000px;
+  padding: 6px 2px;
+}
+.endo-radio--group label {
+  animation: ease-in-out 0.25s;
+  padding: 4px;
+}
+.endo-radio--group input[type=radio]:checked+label {
+  background: var(--endo-theme-primary, #2a2aff);
+  color: var(--endo-theme--on-primary, #ffffff);
+  border-radius: 1000px;
 }
 *:focus {outline:none}
 *:active {outline:none}
