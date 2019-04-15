@@ -2,9 +2,9 @@
   /* SITE CONFIGURATION */
   --endo-theme--primary: #2a2aff;
   --endo-theme--on-primary: #FFFFFF;
-  --endo-theme--background: #000000;
-  --endo-theme--on-background: #FFFFFF;
-  --endo-theme--bg-solid: #000000;
+  --endo-theme--background: #FFFFFF;
+  --endo-theme--on-background: #000000;
+  --endo-theme--bg-solid: #FFFFFF;
 }
 
 @keyframes endo-radio--check {
