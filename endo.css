@@ -168,7 +168,7 @@ textarea {
 
 /* todo: media players */
 
-a {
+a[href] {
   color: var(--endo-theme--primary, #2a2aff);
   text-decoration: none;
   border-bottom: var(--endo-theme--primary, #2a2aff) 2px solid;
