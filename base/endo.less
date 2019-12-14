@@ -1,0 +1,278 @@
+@import "endo-color.less";
+//:root {
+    /* SITE CONFIGURATION */
+    /*--endo-theme--primary: #2a2aff;
+    @endo-theme--on-primary: #FFFFFF;
+    @endo-theme--background: #FFFFFF;
+    @endo-theme--on-background: #000000;
+    @endo-theme--bg-solid: #FFFFFF;*/
+    @endo-theme--primary: @endo-color-green-3;
+    @endo-theme--on-primary: #000000;
+    @endo-theme--background: @endo-color-bluegray-1;
+    @endo-theme--on-background: #ffffff;
+    @endo-theme--bg-solid: @endo-color-bluegray-1;
+//  }
+  
+  @keyframes endo-radio--check {
+    from {padding: 6px; background-color: @endo-theme--bg-solid}
+    to {padding: 2px; background-color: @endo-theme--primary}
+  }
+  @keyframes endo-radio--uncheck {
+    from {padding: 2px; background-color: @endo-theme--primary}
+    to {padding: 6px; background-color: @endo-theme--bg-solid}
+  }
+  @keyframes endo-switch--check {
+    from {padding-left: 2px; padding-right: 16px}
+    to {padding-right: 2px; padding-left: 16px}
+  }
+  @keyframes endo-switch--uncheck {
+    from {padding-right: 2px; padding-left: 16px}
+    to {padding-left: 2px; padding-right: 16px}
+  }
+  @keyframes endo-checkbox--check {
+    from {background-size: 0px, 16px;}
+    to {background-size: 12px, 16px;}
+  }
+  @keyframes endo-checkbox--uncheck {
+    from {background-size: 12px, 16px;}
+    to {background-size: 0px, 16px;}
+  }
+  
+  input[type=radio] {
+    border: @endo-theme--primary 2px solid;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: @endo-theme--primary content-box content-box;
+    padding: 6px;
+    animation: endo-radio--uncheck ease-in-out 0.25s;
+  }
+  
+  input[type=radio]:checked {
+    background: @endo-theme--primary content-box content-box;
+    padding: 2px;
+    animation: endo-radio--check ease-in-out 0.25s;
+  }
+  
+  .endo-radio--group input[type=radio] {
+    display: none;
+  }
+  .endo-radio--group {
+    display: inline-block;
+    border: @endo-theme--primary 2px solid;
+    border-radius: 1000px;
+    padding: 6px 2px;
+  }
+  .endo-radio--group label {
+    animation: ease-in-out 0.25s;
+    padding: 4px;
+  }
+  .endo-radio--group input[type=radio]:checked+label {
+    background: @endo-theme--primary;
+    color: @endo-theme--on-primary;
+    border-radius: 1000px;
+  }
+  *:focus {outline:none}
+  *:active {outline:none}
+  
+  input[type=checkbox] {
+    border: @endo-theme--primary 2px solid;
+    border-radius: 0%;
+    width: 16px;
+    height: 16px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-origin: content-box;
+    background-clip: content-box;
+    background-position: 50%;
+    animation: endo-checkbox--uncheck ease-in-out 0.25s;
+  }
+  input[type=checkbox]:checked {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgaWQ9InN2Zzg0NyIKICAgdmVyc2lvbj0iMS4xIgogICB2aWV3Qm94PSIwIDAgNS4yMjE4Mjc1IDMuNjQ3NDE5MiIKICAgaGVpZ2h0PSIzLjY0NzQxOTJtbSIKICAgd2lkdGg9IjUuMjIxODI3NW1tIj4KICA8ZGVmcwogICAgIGlkPSJkZWZzODQxIiAvPgogIDxtZXRhZGF0YQogICAgIGlkPSJtZXRhZGF0YTg0NCI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGcKICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLC0yOTMuMzUyNTgpIgogICAgIGlkPSJsYXllcjEiPgogICAgPHBhdGgKICAgICAgIGlkPSJwYXRoODI5IgogICAgICAgZD0ibSAwLjE5MDEzMTMsMjk1LjE2NDEzIDEuNDM4NjcyLDEuNDM4NjcgMy40MTYyNTc0LC0zLjA1MjkzIC0zLjQzMzYwNTQsMy4wODI5OCB6IgogICAgICAgc3R5bGU9ImZpbGw6bm9uZTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6IzJhMmFmZjtzdHJva2Utd2lkdGg6MC41MjkxNjY2NDtzdHJva2UtbGluZWNhcDpidXR0O3N0cm9rZS1saW5lam9pbjptaXRlcjtzdHJva2UtbWl0ZXJsaW1pdDo0O3N0cm9rZS1kYXNoYXJyYXk6bm9uZTtzdHJva2Utb3BhY2l0eToxIiAvPgogIDwvZz4KPC9zdmc+Cg==);
+    background-origin: content-box;
+    background-clip: content-box;
+    background-size: 12px;
+    background-repeat: no-repeat;
+    animation: endo-checkbox--check ease-in-out 0.25s;
+  }
+  input[type=checkbox].switchbox {
+    border: @endo-theme--primary 2px solid;
+    border-radius: 0%;
+    width: 32px;
+    height: 16px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-color: #aaaaaa;
+    background-size: 50%;
+    background-origin: content-box;
+    background-clip: content-box;
+    padding: 2px;
+    padding-right: 16px;
+    animation: endo-switch--uncheck ease-in-out 0.25s;
+  }
+  input[type=checkbox].switchbox:checked {
+    border: @endo-theme--primary 2px solid;
+    background-color: @endo-theme--primary;
+    background-size: 50%;
+    background-origin: content-box;
+    background-clip: content-box;
+    padding: 2px;
+    padding-left: 16px;
+    animation: endo-switch--check ease-in-out 0.25s;
+  }
+  
+  select, input, button {
+    background: transparent;
+    border: none;
+    border-bottom: @endo-theme--primary 2px solid;
+    border-radius: 4px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+  select:disabled, input:disabled, button:disabled {
+    background: transparent;
+    border: none;
+    border-bottom: #aaaaaa 2px solid;
+    border-radius: 4px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+  input[type=color] {
+    padding: 0px;
+    width: 24px;
+    height: 24px;
+  }
+  input[type=range] {
+    border-bottom: none;
+    border-left: @endo-theme--primary 2px solid;
+    border-right: @endo-theme--primary 2px solid;
+    border-bottom: @endo-theme--primary 1px solid;
+  }
+  input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
+    background: @endo-theme--primary;
+    border-radius: 50%;
+    border: 0;
+  }
+  textarea {
+    background: transparent;
+    border: none;
+    border-bottom: @endo-theme--primary 2px solid;
+    border-left: @endo-theme--primary 2px solid;
+    border-radius: 4px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    font-family: initial;
+  }
+  
+  /* todo: media players */
+  
+  a[href]:not(.endo-link__ignore) {
+    color: @endo-theme--primary;
+    text-decoration: none;
+    border-bottom: @endo-theme--primary 2px solid;
+    border-radius: 2px;
+  }
+  
+  fieldset {
+    border: @endo-theme--primary 2px solid;
+    border-top: @endo-theme--primary 1px solid;
+    border-radius: 4px;
+  }
+  legend {
+    border: none;
+    border-bottom: @endo-theme--primary 2px solid;
+    border-radius: 4px;
+  }
+  
+  card, .endo-card {
+    border: @endo-theme--primary 2px solid;
+    border-bottom: none;
+    border-top: none;
+    padding-left: 8px;
+    border-radius: 4px;
+    display: block;
+    box-shadow: 0 0 6px black;
+    padding: 4px 8px;
+    margin: 24px 0;
+    background: @endo-theme--bg-solid;
+  }
+  .endo-top-bar {
+    box-shadow: 0 0 6px black;
+    padding: 8px;
+    margin: -8px;
+    width: 100%;
+    height: 48px;
+  }
+  .endo-card--tight {
+    padding: 0px 2px;
+  }
+  .endo-card--shadow__light {
+    box-shadow: 0 0 6px white;
+  }
+  
+  .endo-card--container__thin, .endo-card--container__small {
+    max-width: 512px;
+    padding: 0 calc(50vw - 256px);
+  }
+  .endo-card--container__medium {
+    max-width: 768px;
+    padding: 0 calc(50vw - 384px);
+  }
+  .endo-card--container__large, .endo-card--container__big {
+    max-width: 1024px;
+    padding: 0 calc(50vw - 512px);
+  }
+
+  .endo-drawer {
+    max-width: 90vw;
+    @media (min-width: 839px) {
+      max-width: 33vw;
+    }
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+
+    background: @endo-theme--background;
+    padding: 16px;
+    box-shadow: 0 0 6px black;
+  }
+  .endo-drawer.endo-drawer__open {
+    display: block
+  }
+  .endo-drawer--blocker {
+    position:fixed;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    background: #0000007f
+  }
+  
+  html {
+    height: 100%;
+    width: 100%;
+  }
+  body[layout="text"] article {
+    max-width: 640px;
+  }
+  body {
+    background: @endo-theme--background;
+    color: @endo-theme--on-background;
+  }
+  
